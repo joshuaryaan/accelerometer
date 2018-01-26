@@ -59,11 +59,11 @@
             window.addEventListener("deviceorientation", function(event) 
             {
                 var xValue = Math.round(event.gamma);
-                $(".x").append(xValue);
+                $(".x").html(xValue);
                 var yValue = Math.round(event.beta);
-                $(".y").append(yValue);
+                $(".y").html(yValue);
                 var zValue = Math.round(event.alpha);
-                $(".z").append(zValue);
+                $(".z").html(zValue);
             }, true);
         } else {
         alert("Sorry, your browser doesn't support Device Orientation");
