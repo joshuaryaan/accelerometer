@@ -62,7 +62,7 @@
                 $(".x").html(xValue);
                 var yValue = Math.round(event.beta);
                 $(".y").html(yValue);
-                document.getElementById("svg").style.webkitTransform = "scaleY("+yValue+"deg)";
+                document.getElementById("svg").style.webkitTransform = "rotateY("+ yValue +"deg)";
                 var zValue = Math.round(event.alpha);
                 $(".z").html(zValue);
             }, true);
