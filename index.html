@@ -60,6 +60,7 @@
             {
                 var xValue = Math.round(event.gamma);
                 $(".x").html(xValue);
+                document.getElementById("svg").style.webkitTransform = "scaleY("+(Math.round(event.beta))+")";
                 var yValue = Math.round(event.beta);
                 $(".y").html(yValue);
                 var zValue = Math.round(event.alpha);
