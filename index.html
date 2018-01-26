@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        
+        html {
+            background-color: #eaeaea;
+        }
+        
+        object {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);    
+        }
+        
+        svg { 
+            width: 40vw;
+            height: 40vw;
+            transform-origin: 50% 50%;
+            /*
+            -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            */
+        }
+        
+        rect {
+            width: 40vw;
+            height: 40vw;
+            fill: black;
+            stroke-width: 0;
+        }
+        
+    </style>
+   
+</head>
+
+<body>
+    
+    <p class="x">x: </p>
+    <p class="y">y: </p>
+    <p class="z">z: </p>
+    
+    <object>
+        <svg id="svg">
+          <rect/>
+        </svg>
+    </object>
+    
+    
+     <script type="text/javascript">
+         
+         if (window.DeviceOrientationEvent) {
+            window.addEventListener("deviceorientation", function(event) 
+            {
+                var xValue = Math.round(event.gamma);
+                $(".x").append(xValue);
+                var yValue = Math.round(event.beta);
+                $(".y").append(yValue);
+                var zValue = Math.round(event.alpha);
+                $(".z").append(zValue);
+            }, true);
+        } else {
+        alert("Sorry, your browser doesn't support Device Orientation");
+        };
+
+    </script>
+
+</body>
+
+</html>
