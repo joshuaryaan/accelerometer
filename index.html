@@ -48,8 +48,8 @@
     <p>*<span>0</span></p>
     
     <object>
-        <svg id="svg">
-          <rect/>
+        <svg>
+            <rect/>
         </svg>
     </object>
     
@@ -59,7 +59,7 @@
          if (window.DeviceOrientationEvent) {
             window.addEventListener("deviceorientation", function(event) 
             {
-                var multiplier = "2";
+                var multiplier = "0.5";
                 var zValue = Math.round(event.alpha) * multiplier;
                 $(".z").html(zValue);
                 var xValue = Math.round(event.beta) * multiplier;
@@ -72,6 +72,8 @@
         } else {
         alert("Sorry, your browser doesn't support Device Orientation");
         };
+         
+         
 
     </script>
 
