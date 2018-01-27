@@ -59,7 +59,7 @@
          if (window.DeviceOrientationEvent) {
             window.addEventListener("deviceorientation", function(event) 
             {
-                var multiplier = "0.5";
+                var multiplier = "0.7";
                 var zValue = Math.round(event.alpha) * multiplier;
                 $(".z").html(zValue);
                 var xValue = Math.round(event.beta) * multiplier;
