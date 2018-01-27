@@ -60,11 +60,11 @@
             window.addEventListener("deviceorientation", function(event) 
             {
                 var multiplier = "0.7";
-                var zValue = Math.round(event.alpha) * multiplier;
+                var zValue = Math.round(event.alpha);
                 $(".z").html(zValue);
                 var xValue = Math.round(event.beta) * multiplier;
                 $(".x").html(xValue);
-                var yValue = Math.abs(Math.round(event.gamma));
+                var yValue = Math.abs(Math.round(event.gamma)) * multiplier;
                 $(".y").html(yValue);
                 $("span").html(multiplier);
                 $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg) rotateZ(" + zValue + "deg)");
