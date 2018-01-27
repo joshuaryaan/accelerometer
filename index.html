@@ -64,7 +64,7 @@
                 $(".z").html(zValue);
                 var xValue = Math.round(event.beta) * multiplier;
                 $(".x").html(xValue);
-                var yValue = Math.abs(Math.round(event.gamma)) * multiplier;
+                var yValue = Math.abs(Math.round(event.gamma));
                 $(".y").html(yValue);
                 $("span").html(multiplier);
                 $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg) rotateZ(" + zValue + "deg)");
