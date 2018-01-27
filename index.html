@@ -45,7 +45,7 @@
     <p class="x">x: </p>
     <p class="y">y: </p>
     <p class="z">z: </p>
-    <p>*<span>0</span></p>
+    <p>scale:<span>0</span></p>
     
     <object>
         <svg>
@@ -59,15 +59,15 @@
          if (window.DeviceOrientationEvent) {
             window.addEventListener("deviceorientation", function(event) 
             {
-                var multiplier = "1";
+                var scale = "1";
                 var zValue = Math.round(event.alpha);
                 $(".z").html(zValue);
-                var xValue = Math.round(event.beta) * multiplier;
+                var xValue = Math.round(event.beta);
                 $(".x").html(xValue);
-                var yValue = Math.abs(Math.round(event.gamma)) * multiplier;
+                var yValue = Math.abs(Math.round(event.gamma));
                 $(".y").html(yValue);
-                $("span").html(multiplier);
-                $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg) rotateZ(" + zValue + "deg)");
+                $("span").html(scale);
+                $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg) rotateZ(" + zValue + "deg) scale(" + scale + ", " + scale + ")");
             }, true);
         } else {
         alert("Sorry, your browser doesn't support Device Orientation");
