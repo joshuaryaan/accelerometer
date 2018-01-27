@@ -58,12 +58,12 @@
          if (window.DeviceOrientationEvent) {
             window.addEventListener("deviceorientation", function(event) 
             {
-                var xValue = Math.round(event.gamma);
-                $(".x").html(xValue);
-                var yValue = Math.round(event.beta);
-                $(".y").html(yValue);
                 var zValue = Math.round(event.alpha);
                 $(".z").html(zValue);
+                var xValue = Math.round(event.beta);
+                $(".x").html(xValue);
+                var yValue = Math.round(event.gamma);
+                $(".y").html(yValue);
                 $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg) rotateZ(" + zValue + "deg)");
             }, true);
         } else {
