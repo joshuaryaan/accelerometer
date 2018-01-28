@@ -27,6 +27,7 @@
             -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
             transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
             */
+            transition: all 1s;
         }
         
         rect {
@@ -53,7 +54,6 @@
         </svg>
     </object>
     
-    
      <script type="text/javascript">
          
          if (window.DeviceOrientationEvent) {
@@ -73,8 +73,10 @@
         alert("Sorry, your browser doesn't support Device Orientation");
         };
          
+         $("svg").click(function(){
+            $("svg").css({transform: 'scale(0.5)'});  
+        });
          
-
     </script>
 
 </body>
