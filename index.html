@@ -29,13 +29,6 @@
             */
         }
         
-        rect {
-            width: 40vw;
-            height: 40vw;
-            fill: black;
-            stroke-width: 0;
-        }
-        
     </style>
    
 </head>
@@ -49,7 +42,8 @@
     
     <object>
         <svg>
-            <rect/>
+            <rect width="40vw" height="40vw" fill="black"/>
+            <circle cx="50%" cy="50%" r="20vw" fill="black" style="display: none"/>
         </svg>
     </object>
     
@@ -58,22 +52,31 @@
          if (window.DeviceOrientationEvent) {
             window.addEventListener("deviceorientation", function(event) 
             {
-                var scale = "1";
                 var zValue = Math.round(event.alpha);
                 $(".z").html(zValue);
                 var xValue = Math.round(event.beta);
                 $(".x").html(xValue);
                 var yValue = Math.abs(Math.round(event.gamma));
                 $(".y").html(yValue);
-                $("span").html(scale);
-                $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg) rotateZ(" + zValue + "deg) scale(" + scale + ", " + scale + ")");
+                $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg) rotateZ(" + zValue + "deg)");
             }, true);
         } else {
         alert("Sorry, your browser doesn't support Device Orientation");
         };
+        
+         var scale = "1";
+         $("span").html(scale);
          
-         $("svg").click(function(){
-            $("rect").css({fill: 'white'});  
+         
+         
+         $("rect").click(function(){
+            $( "rect" ).css( "display", "none");
+            $( "circle" ).css( "display", "block");
+        });
+         
+         $("circle").click(function(){
+            $( "circle" ).css( "display", "none");
+            $( "rect" ).css( "display", "block");
         });
          
     </script>
