@@ -39,14 +39,6 @@
             transform-origin: 50% 50%;
         }
         
-        .bar {
-            width: 90%;
-            height: 3px;
-            background-color: black;
-            position: absolute;
-            bottom: 0;
-        }
-        
         #color{
             position: absolute;
             z-index: -1;
@@ -56,19 +48,11 @@
             background-color: #252525;
         }
         
-        
-        
     </style>
    
 </head>
 
 <body>
-    
-    <p class="x">x: </p>
-    <p class="y">y: </p>
-    <p class="z">z: </p>
-    <p>scale:<span>0</span></p>
-    <p>version: 3</p>
     
     <div class="ui-widget-content object-wrapper" id="draggable">
     <object>
@@ -80,8 +64,6 @@
     </div>
     
     <div id="color" onclick="setColor(this)"></div>
-        
-    <div class="bar"></div>
     
      <script type="text/javascript">
          
@@ -89,19 +71,13 @@
             window.addEventListener("deviceorientation", function(event) 
             {
                 var zValue = Math.round(event.alpha);
-                $(".z").html(zValue);
                 var xValue = Math.round(event.beta);
-                $(".x").html(xValue);
                 var yValue = Math.round(event.gamma);
-                $(".y").html(yValue);
                 $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg) rotateZ(" + zValue + "deg)");
             }, true);
         } else {
         alert("Sorry, your browser doesn't support Device Orientation");
         };
-        
-         var scale = "1";
-         $("span").html(scale);
          
          var backgrounds = ["#96BAC0", "#3D8A3E", "#CD5A37", "#252525"];
             function setColor(el) {
