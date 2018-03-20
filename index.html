@@ -79,13 +79,17 @@
         alert("Sorry, your browser doesn't support Device Orientation");
         };
          
-        $( document ).on( "mousemove", function( event ) {
-            var xPercent = event.pageX / $( document ).width() * 30;
-            var yValue = xPercent;
-            var yPercent = event.pageY / $( document ).height() * 30;
-            var xValue = yPercent;
-            $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg)");
-        });
+        
+            if ($(window).width() >= 800){	
+                $( document ).on( "mousemove", function( event ) {
+                    var xPercent = event.pageX / $( document ).width() * 30;
+                    var yValue = xPercent;
+                    var yPercent = event.pageY / $( document ).height() * 30;
+                    var xValue = yPercent;
+                    $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg)");
+                });
+            }	
+        
          
          var backgrounds = ["#96BAC0", "#3D8A3E", "#CD5A37", "#252525"];
             function setColor(el) {
