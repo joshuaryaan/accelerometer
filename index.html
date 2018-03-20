@@ -70,7 +70,9 @@
          var scale = "1";
          $("span").html(scale);
          
-         
+         document.addEventListener("touchmove", function(event){
+            event.preventDefault();
+        });
          
          $("rect").click(function(){
             $( "rect" ).css( "display", "none");
@@ -81,6 +83,8 @@
             $( "circle" ).css( "display", "none");
             $( "rect" ).css( "display", "block");
         });
+         
+         
          
     </script>
 
