@@ -56,7 +56,7 @@
                 $(".z").html(zValue);
                 var xValue = Math.round(event.beta);
                 $(".x").html(xValue);
-                var yValue = Math.abs(Math.round(event.gamma));
+                var yValue = Math.round(event.gamma);
                 $(".y").html(yValue);
                 $('svg').css("transform","rotateX(" + xValue + "deg) rotateY(" + yValue + "deg) rotateZ(" + zValue + "deg)");
             }, true);
