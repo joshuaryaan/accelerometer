@@ -5,7 +5,9 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <style>
         
         html, body {
@@ -16,6 +18,13 @@
             min-height: 100%;
             overflow: hidden;
             background-color: #eaeaea;
+        }
+        
+        .object-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         object {
@@ -43,6 +52,8 @@
             bottom: 0;
         }
         
+        
+        
     </style>
    
 </head>
@@ -55,13 +66,15 @@
     <p>scale:<span>0</span></p>
     <p>version: 1</p>
     
+    <div class="ui-widget-content object-wrapper" id="draggable">
     <object>
         <svg>
             <rect width="40vw" height="40vw" fill="black"/>
             <circle cx="50%" cy="50%" r="20vw" fill="black" style="display: none"/>
         </svg>
     </object>
-    
+    </div>
+        
     <div class="bar"></div>
     
      <script type="text/javascript">
@@ -95,6 +108,10 @@
             $( "circle" ).css( "display", "none");
             $( "rect" ).css( "display", "block");
         });
+         
+         $( function() {
+            $( "#draggable" ).draggable({ containment: "body", scroll: false, revert: true });
+          } );
          
     </script>
 
